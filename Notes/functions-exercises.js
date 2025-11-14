@@ -6,6 +6,11 @@ function sayHello(){
     console.log("Hello, world!")
 };
 
+function gitFunction(){
+    console.log("Im making a change on a new branch")
+}
+gitFunction();
+
 
 
 // 2) Write a function greet(name) that takes one parameter and logs "Hello, <name>!".
