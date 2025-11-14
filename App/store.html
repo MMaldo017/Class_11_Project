@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Store</title>
+  <link rel="stylesheet" href="./style2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index2.html">
+        <img src="images/logo.svg" alt="Brand logo" class="brand__logo" />
+        <span class="brand__name">YourBrand</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a href="./index2.html" class="nav__link">Home</a></li>
+          <li><a href="./store.html" class="nav__link">Store</a></li>
+          <li><a href="../Auth/login.html" class="btn btn--sm btn--primary">Log In</a></li>
+          <li><span id="cart-badge" class="btn btn--sm btn--outline">Cart (0)</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container grid grid--2">
+      <!-- Left: products -->
+      <section>
+        <header class="section__header">
+          <h2>Products</h2>
+          <p>Hand‑picked items</p>
+        </header>
+
+        <!-- (optional) filter bar -->
+        <div id="filter-bar" class="form" style="margin-bottom:12px">
+          <select id="categoryFilter">
+            <option value="all">All</option>
+            <option value="Dress">Dress</option>
+            <option value="Sport">Sport</option>
+          </select>
+          <button id="applyFilter" class="btn btn--outline btn--sm">Filter</button>
+        </div>
+
+        <div id="store-grid" class="grid grid--3"></div>
+      </section>
+
+      <!-- Right: utilities -->
+      <aside>
+        <div class="card" id="shipping-card">
+          <h3>Shipping Calculator</h3>
+          <div class="form" style="margin-top:10px">
+            <input id="age" type="number" placeholder="Your age" />
+            <input id="cartValue" type="number" placeholder="Cart value ($)" />
+            <input id="points" type="number" placeholder="Reward points" />
+            <button id="calcShipBtn" class="btn btn--primary btn--sm">Calculate</button>
+            <p id="shippingResult" class="xsmall"></p>
+          </div>
+        </div>
+
+        <div class="card" id="promo-card" style="margin-top:16px">
+          <h3>Promo Code</h3>
+          <div class="form" style="margin-top:10px">
+            <input id="promoInput" type="text" placeholder="Enter code (e.g., STUDENT)" />
+            <button id="applyPromoBtn" class="btn btn--outline btn--sm">Apply</button>
+            <p id="promoResult" class="xsmall"></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <!-- Cart Modal -->
+    <dialog id="cartModal" class="card" style="max-width:680px;width:96%;border:none;border-radius:16px;padding:16px">
+      <header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0">Your Cart</h3>
+        <button id="closeCartBtn" class="btn btn--sm btn--outline">Close</button>
+      </header>
+
+      <div id="cartEmpty" class="xsmall" style="display:none;margin:8px 0">Your cart is empty.</div>
+
+      <div id="cartList" style="display:grid;gap:8px;margin:8px 0"></div>
+
+      <footer style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+        <strong>Total: $<span id="cartTotal">0.00</span></strong>
+        <div style="display:flex;gap:8px">
+          <button id="clearCartBtn" class="btn btn--outline btn--sm">Clear Cart</button>
+          <button id="checkoutBtn" class="btn btn--primary btn--sm">Checkout (mock)</button>
+        </div>
+      </footer>
+    </dialog>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> YourBrand</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script type="module" src="./js/cart.js"></script>
+  <script type="module" src="./js/store.js"></script>
+</body>
+</html>
