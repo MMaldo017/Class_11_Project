@@ -355,3 +355,13 @@ Week 2 delivers a visible, portfolio‑friendly Store Lite MVP:
 // for(let  i = 0; i < 3; i++){
 //   setTimeout(() => console.log(i), 0)
 // }
+
+console.log(true !== "");
+
+
+let myObject = {
+
+  "key name": "Martin"
+};
+
+console.log(myObject['key name'])
